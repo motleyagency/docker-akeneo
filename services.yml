@@ -1,0 +1,6 @@
+# app/config/services.yml
+services:
+    my.listener:
+        class: Acme\Bundle\AppBundle\EventListener\ProductModificationListener
+        tags:
+            - { name: kernel.event_listener, event: akeneo.storage.post_save, method: onPostSave }

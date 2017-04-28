@@ -1,0 +1,18 @@
+2_2unx8hg8xrk040s4ww0wk8cwcosc8wgksco0wgcgkwkgkwgs0w
+1j2showmc1voccoc0swwcg0coosoowkssg0s44g8ockcs8owwg
+
+echo -n "2_2unx8hg8xrk040s4ww0wk8cwcosc8wgksco0wgcgkwkgkwgs0w:1j2showmc1voccoc0swwcg0coosoowkssg0s44g8ockcs8owwg" | base64
+
+curl -X POST http://localhost:8081/api/oauth/v1/token \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Basic MV9wbTBoaGUxaTQ3NDQ4b2c0a2NrZzQ4Y3N3a29nODh3c2tzb29jb2Mwa3c0YzA4OGM0OjNmaWMydHpmMXQwazB3b2M0MG84d2t3dzBzOHdrd2swb2d3NHdvY29zMDhvd2swY3c4" \
+        -d '{
+            "grant_type": "password",
+            "username": "admin",
+            "password": "admin"
+        }'
+
+curl http://localhost:8081/api/rest/v1/categories \
+        -H "Authorization: Bearer NDQzY2NiZTE0YmNkMmIzOThjOGU4MGEwZTMyNThhZDMzN2NmYTdkYzU4NTY0MTMzZTgzZmNhYzYwM2QxNTNhYw"
+
+https://docs.akeneo.com/1.7/cookbook/event/index.html

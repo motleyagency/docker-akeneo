@@ -13,7 +13,7 @@ services:
   akeneo:
     image: pardahlman/akeneo:1.7.3
     ports:
-      - 8080:80
+      - 8081:80
     depends_on:
       - mysql
     entrypoint: ["/entry/wait-for-it.sh", "mysql:3306", "--", "/bin/bash", "/entry/entrypoint.sh"]
@@ -23,6 +23,10 @@ services:
       - DATABASE_NAME=${DB_NAME}
       - DATABASE_USER=${DB_USER}
       - DATABASE_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./services.yml:/akeneo/app/config/services.yml:ro
+      - ./config.yml:/akeneo/app/config/config.yml:ro
+      - ./ProductModificationListener.php:/akeneo/src/Acme/Bundle/AppBundle/EventListener/ProductModificationListener.php:ro
 
 volumes:
   data:
